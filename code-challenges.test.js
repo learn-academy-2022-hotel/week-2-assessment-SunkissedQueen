@@ -12,14 +12,56 @@
 
 // --------------------INSTRUCTOR EXAMPLE: Create a function that takes in an array of numbers and returns an array with all the numbers multiplied by 3.
 
+
 // a) Create a test with expect statements for each of the variables provided.
 
-const numbersArray1 = [6, 7, 8, 9, 10]
-// Expected output: [18, 21, 24, 27, 30]
-const numbersArray2 = [24, 27, 30, 33, 36]
-// Expected output: [72, 81, 90, 99, 108]
+
+// TEST
+describe("comboArray", () => {
+  it("takes in an array of numbers and returns an array with all the numbers multiplied by 3", () => {
+    const numbersArray1 = [6, 7, 8, 9, 10]
+    // Expected output: [18, 21, 24, 27, 30]
+    const numbersArray2 = [24, 27, 30, 33, 36]
+    // Expected output: [72, 81, 90, 99, 108]
+    expect(comboArray(numbersArray1)).toEqual([18, 21, 24, 27, 30])
+    expect(comboArray(numbersArray2)).toEqual([72, 81, 90, 99, 108])
+  })
+})
+
+// Good failure
+// FAIL  ./code-challenges.test.js
+// comboArray
+//   ✕ takes in an array of numbers and returns an array with all the numbers multiplied by 3
+
+// ● comboArray › takes in an array of numbers and returns an array with all the numbers multiplied by 3
+
+//   ReferenceError: comboArray is not defined
 
 // b) Create the function that makes the test pass.
+// PSEUDOCODE:
+  // declare a function called comboArray
+  // input: array of numbers, parameter called array
+  // output: an array with all the numbers multiplied by 3, same length as the original
+  // Process
+    // iterate across the values and multiply each value by 3 using the high order function map()
+    // return the array created by the high order function
+
+// FUNCTION
+// const comboArray = ( array ) => {
+//   return array.map((value) => {
+//     return value * 3
+//   })
+// }
+
+// REFACTOR
+const comboArray = ( array ) => {
+  return array.map(value =>value * 3)
+}
+
+// PASS
+  // PASS  ./code-challenges.test.js
+  // comboArray
+  //   ✓ takes in an array of numbers and returns an array with all the numbers multiplied by 3 (2 ms)
 
 // --------------------1) Create a function that takes a object as an argument and decides if the number inside it is evenly divisible by three or not.
 
